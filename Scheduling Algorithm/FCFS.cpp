@@ -2,17 +2,17 @@
 using namespace std;
 
 struct process {
-	int id;
-	int at;
-	int bt;
+	int id;	//process id
+	int at;	//arrival time
+	int bt;	//burst time
 };
 vector<process> pro;
 struct task{
 	int id;
-	int t;
-	int w;
+	int t; // turnaround time
+	int w; // waiting time
 };
-vector<task>v;
+vector<task>v;	//Stores the order in which process completes
 void print(int n){
 	for(int i=0;i<n;++i){
 		cout<<pro[i].id<<' '<<pro[i].at<<' '<<pro[i].bt<<endl;
@@ -44,9 +44,9 @@ int main(){
     // for writing error to error.txt
     freopen("G:/3rd_year/CS342_OS_Lab/Result/error.txt", "w", stderr);
 	#endif
-	int n;
+	int n; // n is the number of process with id as its sequence numbered[1,2,...,n]
 	cin>>n;
-	for(int i=0;i<n;++i){
+	for(int i=0;i<n;++i){ //Takes x [arrival time] and y[burst time] as input
 		int x,y;
 		cin>>x>>y;
 		pro.push_back({i,x,y});
