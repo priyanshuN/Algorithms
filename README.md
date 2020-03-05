@@ -7,6 +7,7 @@ List of Algorithms in C/C++
    - FCFS
    - SJF(Non-premptive)
    - SRTF(Premptive)
+   - LRTF(Premptive)
    - RR
    - Priority(Non-premptive)
    - Multilevel priority queue(Premptive)
