@@ -35,7 +35,7 @@ void order(int n){
 
 struct cond{//comparator function for priority queue
 	bool operator()(const process a, const process b){
-		if(a.exec!=b.exec){ //processs with lower execution is given higher priority
+		if(a.exec!=b.exec){ //processs with higher execution is given higher priority
 			return a.exec < b.exec;
 		}
 		else{ //in case of same execution time priority is given to process is lower id
