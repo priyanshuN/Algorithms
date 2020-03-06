@@ -4,19 +4,20 @@ using namespace std;
 int c_t=0;
 
 struct process {
-	int id;
-	int at;
-	int bt;
-	int exec;
+	int id;	//process id
+	int at;	//arrival time
+	int bt; //burst time
+	int exec; 	// total remaining execution time[intially equal to burst time]
 };
-vector<process> pro;
+vector<process> pro; //vector of struct 
 struct task{
-	int id;
-	int t;
-	int w;
+	int id;	//process id
+	int t;	//turnaround  time
+	int w;	//waiting time
 };
-vector<task>v;
-unordered_set<int>s,r;
+vector<task>v; //stores order of completion of process
+unordered_set<int>s,r; //set s stores id of completed process 
+					   // r stores the id of process which entered the queue
 
 void print(int n){
 	for(int i=0;i<n;++i){
@@ -32,12 +33,12 @@ void order(int n){
 }
 
 
-struct cond{
+struct cond{//comparator function for priority queue
 	bool operator()(const process a, const process b){
-		if(a.exec!=b.exec){
+		if(a.exec!=b.exec){ //processs with lower execution is given higher priority
 			return a.exec < b.exec;
 		}
-		else{
+		else{ //in case of same execution time priority is given to process is lower id
 			return a.id > b.id;
 		}
 	}
@@ -45,7 +46,7 @@ struct cond{
 
 priority_queue<process,vector<process>,cond>q;
 
-void update_queue(int n){
+void update_queue(int n){ //function to update queue
 	for(int j=0;j<n;++j){
 		if(s.find(pro[j].id)==s.end() && r.find(pro[j].id)==r.end() && c_t>=pro[j].at){
 			q.push(pro[j]);
@@ -65,7 +66,7 @@ int main(){
 	#endif
 	int n;
 	cin>>n;
-	for(int i=0;i<n;++i){
+	for(int i=0;i<n;++i){//Takes x [arrival time] and y[burst time] as input
 		int x,y;
 		cin>>x>>y;
 		pro.push_back({i,x,y,y});

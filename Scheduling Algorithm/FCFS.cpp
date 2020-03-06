@@ -6,7 +6,7 @@ struct process {
 	int at;	//arrival time
 	int bt;	//burst time
 };
-vector<process> pro;
+vector<process> pro; //vector of struct
 struct task{
 	int id;
 	int t; // turnaround time
@@ -26,11 +26,11 @@ void order(int n){
 	cout<<endl;
 }
 
-bool compare(const process a, const process b){
-	if(a.at != b.at){
+bool compare(const process a, const process b){//comparator of function for sorting of process
+	if(a.at != b.at){	//sorted on the basis of arrival time first
 		return a.at < b.at;
 	}
-	else{
+	else{	//in case of same arrival time priority is given to process with lower id
 		return a.id < b.id;
 	}
 }
@@ -68,7 +68,7 @@ int main(){
 	// Code ends
 
 	float t_t=0,w_t=0;
-	for(int i=0;i<n;++i){
+	for(int i=0;i<n;++i){ //calculating turnaround time and waiting time
 		t_t+=v[i].t;
 		w_t+=v[i].w;
 	}
