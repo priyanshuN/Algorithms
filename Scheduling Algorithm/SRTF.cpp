@@ -65,7 +65,7 @@ int main(){
 	#endif
 	int n;
 	cin>>n;
-	for(int i=0;i<n;++i){
+	for(int i=0;i<n;++i){//Takes x [arrival time] and y[burst time] as input
 		int x,y;
 		cin>>x>>y;
 		pro.push_back({i,x,y,y});
