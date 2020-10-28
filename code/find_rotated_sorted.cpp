@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+//finding pivot
 int find_p(int a[],int n,int l,int r){
     if(l>r)return -1;
     int mid=(l+r)/2;
@@ -12,6 +12,20 @@ int find_p(int a[],int n,int l,int r){
     if(a[l]<=a[mid])
         return find_p(a,n,mid+1,r);
     return find_p(a,n,l,mid+1);
+}
+//finding element
+int sol(int a[],int l,int r,int x){
+    if(l>r)return-1;
+    int mid=(l+r)/2;
+    if(a[mid]==x)return mid;
+    if(a[l]<=a[mid]){
+        if(x>=a[l] && x<=a[mid])return sol(a,l,mid-1,x);
+        return sol(a,mid+1,r,x);
+    }
+    if(x>=a[mid] && x<=a[r]){
+        return sol(a,mid+1,r,x);
+    }
+    return sol(a,l,mid-1,x);
 }
 
 int binary(int a[],int n,int l,int r,int x){
