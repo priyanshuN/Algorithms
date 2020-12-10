@@ -12,7 +12,7 @@ void topo(list<int>*g,bool vi[],stack<char>&st,int k,int i){
 }
 
 void toposort(list<int>*g,int k){
-    bool vi[k];
+    bool vi[k]; 
     memset(vi,0,sizeof(vi));
     stack<char>st;
     for(int i=0;i<k;++i){
