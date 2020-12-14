@@ -33,7 +33,7 @@ int getSum(int s,int e,int *st,int l,int r,int i){
 	if(l>e || r<s){
 		return 0;
 	}
-	int mid=s + (e -s)/2;;
+	int mid=s + (e -s)/2;
 	return getSum(s,mid,st,l,r,2*i+1) + getSum(mid+1,e,st,l,r,2*i+2);
 }
 
