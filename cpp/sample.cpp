@@ -20,7 +20,7 @@ int main(){
     freopen("C:/Users/BSEB/Documents/Algorithms/output/input.txt", "r", stdin);
     freopen("C:/Users/BSEB/Documents/Algorithms/output/output.txt", "w", stdout);
     #endif
-    int n,i;
+    int n;
     cin>>n;
     int a[n];
     fr(i,0,n){
