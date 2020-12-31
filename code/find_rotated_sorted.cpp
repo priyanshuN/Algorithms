@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+0#include<bits/stdc++.h>
 using namespace std;
 //finding pivot
 int find_p(int a[],int n,int l,int r){
