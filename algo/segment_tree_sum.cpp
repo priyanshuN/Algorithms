@@ -29,7 +29,7 @@ int getSum(int s,int e,int *st,int l,int r,int i){
 	
 	if(l<=s && r>=e){
 		return st[i];
-	}
+	} 
 	if(l>e || r<s){
 		return 0;
 	}
