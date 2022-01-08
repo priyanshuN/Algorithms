@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	#ifndef ONLINE_JUDGE
+    // for getting input from input.txt
+    freopen("G:/codes/Result/input.txt", "r", stdin);
+    // for writing output to output.txt
+    freopen("G:/codes/Result/output.txt", "w", stdout);
+    // for writing error to error.txt
+    freopen("G:/codes/Result/error.txt", "w", stderr);
+	#endif
+	int n;
+	cin>>n;
+	int a[n];
+	s[0]=0;
+	for(int i=0;i<n;++i){
+		cin>>a[i];
+	}
+	build_segment_tree(1,0,n-1,a,s);
+	print(n,a);
+	print(4 *n,s);
+	update(1,0,n-1,a,1,0);
+	print(4 *n,s);
+	sum=query(1,0,n-1,0,5,a);
+	cout<<sum<<endl;
+	return 0;
+}
